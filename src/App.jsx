@@ -22,7 +22,6 @@ import {
   query,
   orderBy,
 } from "firebase/firestore";
-import logo from "./assets/logo.jpg";
 
 const STATUS_FLOW = [
   { key: "booked", label: "Naka-schedule", color: "#3D5A73" },
@@ -182,18 +181,21 @@ function Header({ tab, setTab }) {
     <div style={{ borderBottom: "3px solid #E8590C", background: "#171B21" }}>
       <div style={{ maxWidth: 720, margin: "0 auto", padding: "1.75rem 1.25rem 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-          <img
-            src={logo}
-            alt="The Car Clinic Rx logo"
+          <div
             style={{
               width: 52,
               height: 52,
               borderRadius: 10,
               flexShrink: 0,
-              objectFit: "cover",
+              background: "#E8590C",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
               boxShadow: "0 0 0 2px #E8590C",
             }}
-          />
+          >
+            <Wrench size={28} color="#171B21" strokeWidth={2.5} />
+          </div>
           <div>
             <h1
               style={{
